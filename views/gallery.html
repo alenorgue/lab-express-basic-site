@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Michael Phelps</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index">Main</a></li>
+      <li><a href="sport-achivements">Sport Achievements</a></li>
+      <li><a href="gallery">Gallery</a></li>
+    <li><a href="about-us">About Us</a></li>
+    </ul>
+  </nav>
+
+  <header id="main" class="main-section">
+    <h1>Michael Phelps</h1>
+    <p>The most decorated Olympian of all time.</p>
+  </header>
+
+   <section class="carousel-section">
+    <h2>Gallery</h2>
+    <div class="carousel">
+      <img id="carousel-img" src="/images/mp2.jpg" alt="Michael Phelps" />
+      <div class="carousel-buttons">
+        <button onclick="prevImage()">⟨</button>
+        <button onclick="nextImage()">⟩</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tribute Page to Michael Phelps</p>
+  </footer>
+
+  <script>
+    const images = [
+      "/images/mp1.jpg",
+      "/images/mp2.jpg",
+      "/images/mp3.jpg"
+    ];
+    let index = 0;
+
+    function showImage(i) {
+      const img = document.getElementById("carousel-img");
+      index = (i + images.length) % images.length;
+      img.src = images[index];
+    }
+
+    function nextImage() {
+      showImage(index + 1);
+    }
+
+    function prevImage() {
+      showImage(index - 1);
+    }
+  </script>
+</body>
+</html>
